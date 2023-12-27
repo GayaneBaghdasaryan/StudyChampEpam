@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  type="text/css" href="./css/topic.css">
+    <title>Topic</title>
+</head>
+
+<body>
+<div  class="header" th:include="header :: header"></div>
+<div class="content">
+    <div class="title">
+        <div class="title_name" th:text="${topicName}"></div>
+    </div>
+    <div class="section">
+        <div class="lesson" th:each="lesson : ${lessons}">
+            <div class="lesson-box">
+                <div class="lesson-name">
+                    <p th:text="${lesson.title}"></p>
+                </div>
+                <a th:href="@{/getQuiz/{lessonId}(lessonId=${lesson.id})}">
+                    <div class="quiz-icon">
+                        <img src="./img/quiz-i.png" alt="quiz-icon">
+                    </div>
+                </a>
+            </div>
+            </div>
+<!--            <div class="lesson-date" th:text="${lesson.quizDate}"></div>-->
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

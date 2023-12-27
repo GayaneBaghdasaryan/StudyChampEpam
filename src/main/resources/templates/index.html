@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marko+One&family=Roboto:ital,wght@1,100&display=swap"
+          rel="stylesheet">
+    <title>quiz</title>
+    <link th:href="@{/css/index.css}" rel="stylesheet">
+</head>
+<body>
+<div class="quiz-table">
+    <div class="results">
+        <div class="score-results"> Score 1/10</div>
+        <div class="quation-number">Quation 1/5</div>
+    </div>
+    <div class="quiz-desk">
+    <div class="question-frame">
+        <p th:text="${quiz.text}"></p>
+    </div>
+    <div class="variants-frame">
+        <div class="variants"
+             th:each="option, index : ${quiz.options}"
+             th:text="${option.text}" >
+             </div>
+    </div>
+    </div>
+<!--    <a th:href="@{/get/next/option/{lessonId}(lessonId=${quiz.lesson.id})}">click</a>-->
+
+</div>
+<div class="result-table">
+    <div class="result-card">
+        <div class="result-frame">
+            <div class="score"> Score 1/10</div>
+        </div>
+        <!--        <button class="result-table-btn" onclick="backToTopic()">Go back topics</button>-->
+    </div>
+</div>
+<script th:href="@{/js/index.js}" ></script>
+</body>

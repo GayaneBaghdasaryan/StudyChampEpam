@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/studychamp
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+  security:
+    client:
+      secret-key: MIIBOgIBAAJBAORAn+nR/B0QbO0RcSYUrHHRUPCF8DNpNS0iMd1cidsfjhsdNHDFja89fnhAEd5f1sdf1sd56f1
+      refresh-token-validity-seconds: 31536000
+      access-token-validity-seconds: 2628000
+server:
+  port: 8082
+  servlet:
+    context-path: /study/champ/
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+jwt:
+  secret-key: K1f4xGLG2AwpEnWa
+

@@ -1,0 +1,18 @@
+<div th:fragment="header" class="header">
+    <div class="bar-logo">
+        <img src="./img/bar-logo.jpg" alt="Bar Logo">
+    </div>
+    <div class="user_icon">
+        <button class="nav_button" onclick="openLogOut()"></button>
+        <div class="user_icon_name" th:text="${userName}">UserName</div>
+        <div class="logout-dropdown" id="logoutDropdown">
+            <div class="logout-dropdown-text">
+                <div th:text="${userName}">UserName</div>
+                <div th:text="${userEmail}">user@email.com</div>
+            </div>
+            <div class="logout-dropdown-line"></div>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </div>
+</div>
+
